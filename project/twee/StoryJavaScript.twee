@@ -1,0 +1,6 @@
+:: StoryJavascript [script]
+// if (typeof GlitchedWriter === 'undefined') {
+//     alert('GlitchedWriter is not defined.');
+// } else {
+//     alert('GlitchedWriter is defined.');
+// }

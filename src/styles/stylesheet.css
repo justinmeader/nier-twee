@@ -1,0 +1,265 @@
+*:focus {
+	outline: none !important;
+  }
+  
+  body {
+	background-color: #C8C2AA;
+	background-size: 4px 4px;
+	background-image: linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,.07) 4px),
+	  linear-gradient(transparent, transparent 3px, rgba(0,0,0,.07) 4px);
+	color: #4D493E;
+	font-family: "Noto Sans", sans-serif;
+	font-weight: 300;
+	margin: 0;
+	min-height: 100vh;
+	box-shadow: inset 0 0 150px rgba(77, 73, 62, .4), inset 0 0 150px rgba(77, 73, 62, .3);
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	letter-spacing: .1rem;
+  }
+  
+  .container {
+	padding: 0 4rem;
+  }
+  
+  header {
+	padding: 1rem 0;
+	background-color: #F1ECD5;
+	border-bottom: 1px solid #4D493E;
+  }
+  
+  h1 {
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: .7rem;
+	text-shadow: .3rem .3rem 0 rgba(77, 73, 62,.3);
+  }
+  
+  h1 span {
+	margin-right: -.7rem;
+  }
+  
+  h1 small {
+	font-weight: 500;
+	text-transform: none;
+	text-shadow: none;
+	letter-spacing: .1rem;
+  }
+  
+  h1 small::before {
+	content: "–";
+  }
+  
+  .pattern {
+	border-top: 2px solid #4D493E;
+  }
+  
+  .pattern-inner {
+	background-color: #D9D1B8;
+	padding: 2rem 0;
+  }
+  
+  button {button {
+	cursor: pointer;
+	font: inherit;
+	border: none;
+	padding: .4rem 1rem;
+	background-color: rgba(77, 73, 62, .35); /* Translated from $color */
+	color: #4D493E; /* Translated from $color */
+	box-sizing: content-box;
+	position: relative;
+	border: 1px solid transparent;
+	border-left: none;
+	border-right: none;
+  }
+  
+  button::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	top: 3px;
+	bottom: 3px;
+	width: 0;
+	background-color: #4D493E; /* Translated from $color */
+	transition: width .2s;
+  }
+  
+  button::after {
+	content: "";
+	display: none;
+	position: absolute;
+	background: #4D493E; /* Translated from $color */
+	width: 100%;
+	height: 2px;
+	left: 0;
+	bottom: -4px;
+  }
+  
+  button:hover,
+  button:focus {
+	background-color: transparent;
+	color: #C8C2AA; /* Translated from $bgColor */
+	border-color: #4D493E; /* Translated from $color */
+  }
+  
+  button:hover::before,
+  button:focus::before {
+	width: 100%;
+  }
+  
+	cursor: pointer;
+	font: inherit;
+	border: none;
+	padding: .4rem 1rem;
+	background-color: rgba($color, .35);
+	color: $color;
+	box-sizing: content-box;
+	position: relative;
+	border: 1px solid transparent;
+	border-left: none;
+	border-right: none;
+	
+	&::before {
+	  content: "";
+	  position: absolute;
+	  z-index: -1;
+	  left: 0; top: 3px; bottom: 3px;
+	  width: 0;
+	  background-color: $color;
+	  transition: width .2s;
+	}
+	
+	&::after {
+	  content: "";
+	  display: none;
+	  position: absolute;
+	  background: $color;
+	  width: 100%;
+	  height: 2px;
+	  left: 0;
+	  bottom: -4px;
+	}
+	
+	&:hover, &:focus {
+	  background-color: transparent;
+	  color: $bgColor;
+	  border-color: $color;
+	  
+	  &::before {
+		width: 100%;
+	  }
+	}
+  }
+  .content {
+	background-color: #F1ECD5;
+	padding: 2rem;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+  }
+  
+  img {
+	box-shadow: 3px 3px 0 rgba(77, 73, 62, .6);
+  }
+  
+  .shadow {
+	text-shadow: 0.08em 0.08em 0.08em #FFF;
+  }
+  
+  .emboss {
+	text-shadow: 0.08em 0.08em 0em #FFF;
+	color: black;
+  }
+.blur {
+	color: transparent;
+	text-shadow: 0em 0em 0.08em #FFF;
+}
+.blurrier {
+	color: transparent;
+	text-shadow: 0em 0em 0.2em #FFF;
+}
+.blurrier::selection {
+	background-color: transparent;
+	color: transparent;
+}
+.blurrier::-moz-selection {
+	background-color: transparent;
+	color: transparent;
+}
+.smear {
+	color: transparent;
+	text-shadow:
+		0em    0em 0.02em rgba(255,255,255,0.75),
+		-0.2em 0em 0.5em  rgba(255,255,255,0.5),
+		0.2em  0em 0.5em  rgba(255,255,255,0.5);
+}
+.mirror {
+	display: inline-block;
+	transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+}
+.upside-down {
+	display: inline-block;
+	transform: scaleY(-1);
+	-webkit-transform: scaleY(-1);
+}
+
+@-webkit-keyframes fade-in-out {
+	0%,
+	to {opacity: 0}
+	50% {opacity: 1}
+}
+@keyframes fade-in-out {
+	0%,
+	to {opacity: 0}
+	50% {opacity: 1}
+}
+.fade-in-out {
+	text-decoration: none;
+	animation: fade-in-out 2s ease-in-out infinite alternate;
+	-webkit-animation: fade-in-out 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes rumble {
+	50% {
+		-webkit-transform: translateY(-.2em);
+		transform: translateY(-.2em)
+	}
+}
+@keyframes rumble {
+	50% {
+		-webkit-transform: translateY(-.2em);
+		transform: translateY(-.2em)
+	}
+}
+.rumble {
+	-webkit-animation: rumble linear 0.1s 0s infinite;
+	animation: rumble linear 0.1s 0s infinite;
+	display:inline-block;
+}
+
+@-webkit-keyframes shudder {
+	50% {
+		-webkit-transform: translateX(0.2em);
+		transform: translateX(0.2em)
+	}
+}
+@keyframes shudder {
+	50% {
+		-webkit-transform: translateX(0.2em);
+		transform: translateX(0.2em)
+	}
+}
+.shudder {
+	animation: shudder linear 0.1s 0s infinite;
+	display: inline-block;
+  }
+
+/* Styles for the START button */
+#buttonPlaceholder button {
+  font-size: 1.5em; /* Increase font size */
+  padding: 1em 2em; /* Increase padding for larger button */
+  display: block; /* Make it a block element */
+  margin: 0 auto; /* Center the button */
+}

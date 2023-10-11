@@ -1,0 +1,52 @@
+:: start
+<h1>NieR: Terminal Eclipse</h1>
+<h2 class="text">FOR THE GLORY OF MANKIND</h2>
+
+<div class="wrapper">
+  <pre><output id="output"></output><span id="cursor">█</span></pre>
+</div>
+
+<<script>>
+  // First Text with 'nier' preset
+  setTimeout(function() {
+    const writer1 = GlitchedWriter.create('.text', { style: 'nier' });
+    writer1.write('ver71.52777777777777');
+  }, 5000);
+
+  // Create the blinking cursor effect
+  setInterval(() => {
+    const cursor = document.getElementById('cursor');
+    cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+  }, 500);
+
+  // Second Text with 'terminal' preset
+  const textToWrite = `Commencing System Check
+Memory Unit: Green
+Initializing Tactics Log
+Loading Geographic Data
+Vitals: Green
+Remaining MP: 100%
+Black Box Temperature: Normal
+Black Box Internal Pressure: Normal
+Activating IFF
+Activating FCS
+Initializing Pod Connection
+Launching DBU Setup
+Activating Inertia Control System
+Activating Environmental Sensors
+Equipment Authentication: Complete
+Equipment Status: Green
+All Systems Green
+Combat Preparations Complete`;
+
+  setTimeout(function() {
+    const writer2 = GlitchedWriter.create('#output', { ...GlitchedWriter.presets.terminal, mode: 'erase_smart', html: true });
+    writer2.write(textToWrite).then(() => {
+      // Show the "START" button after the text is done
+      const placeholderDiv = document.querySelector('#buttonPlaceholder');
+      new Wikifier(placeholderDiv, '<<button [["START"|YourNextPassage]]>><</button>>');
+    });
+  }, 5000);
+<</script>>
+
+<div id="buttonPlaceholder"></div> <!-- This is where the button will appear -->
